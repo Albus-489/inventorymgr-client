@@ -1,0 +1,25 @@
+<div class="modal-header bg-dark">
+  <h4 class="modal-title">New Product</h4>
+  <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true" style="color: antiquewhite;">&times;</span>
+  </button>
+</div>
+<div class="modal-body" style="background-color: rgb(43, 39, 39);">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <ng-container *ngFor="let field of formConfig">
+      <div class="form-group" *ngIf="field.type !== 'checkbox'">
+        <label [for]="field.name">{{field.label}}</label>
+        <input [type]="field.type" [id]="field.name" class="form-control" [formControlName]="field.name">
+      </div>
+      <div class="form-check form-group" *ngIf="field.type === 'checkbox'">
+        <input [type]="field.type" [id]="field.name" class="form-check-input" [formControlName]="field.name">
+        <label [for]="field.name" class="form-check-label">{{field.label}}</label>
+      </div>
+    </ng-container>
+    <div class="form-group mt-4">
+      <button type="submit" class="btn btn-success mr-1">Done</button>
+      <button type="button" class="btn btn-dark" (click)="closeModal()">Cancel</button>
+    </div>
+  </form>
+
+</div>

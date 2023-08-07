@@ -1,0 +1,16 @@
+<div class="main">
+  <div class="ctbox">
+    <!-- sidebar -->
+    <div class="ls" [ngClass]="{ hidden: sideMenuHidden }">
+      <app-sidemenu></app-sidemenu>
+    </div>
+
+    <!-- header and content -->
+    <div class="rs" [ngClass]="{ 'full-width': sideMenuHidden }">
+      <app-header></app-header>
+      <div class="container mt-4 mb-4 test-box">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div
+  class="side-menu-base bg-dark"
+  [ngClass]="{ 'side-menu-hidden': menuService.sideMenuHidden }"
+>
+  <div class="side-header">
+    <h5 class="brand-name">
+      <span class="brand-ls">Inventory</span><span class="brand-rs">Mgr</span>
+    </h5>
+  </div>
+
+  <div class="menu-content">
+    <div class="menu-item" [routerLink]="['']">Home</div>
+    <div class="menu-item" [routerLink]="['/about']">About us</div>
+  </div>
+</div>

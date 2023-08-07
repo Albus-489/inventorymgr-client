@@ -1,0 +1,31 @@
+<div class="homePage">
+  <h1 class="text-center">Storages</h1>
+  <hr class="bg-white" />
+
+  <div *ngIf="isLoading; else storageItems">
+    <!-- Loading icon -->
+    <div class="loading-spinner">
+      <i class="fa fa-spinner fa-spin"></i> Loading...
+    </div>
+  </div>
+
+  <ng-template #storageItems>
+    <ng-container *ngIf="!fetchStoragesError; else errorTemp">
+      <div class="storages">
+        <div class="mb-4" *ngFor="let storage of storages">
+          <app-storage [storageData]="storage"></app-storage>
+        </div>
+      </div>
+      <div class="btn btn-lg btn-success">
+        <span>+ new</span>
+      </div>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #errorTemp>
+    <div style="border-radius: 1rem" class="error p-3 mb-4 text-center">
+      <h3>Error</h3>
+      <span class="text-danger">{{ fetchStoragesError }}</span>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,38 @@
+.test-box {
+  // background-color: rgb(31, 26, 26);
+  color: wheat;
+  flex: 1;
+  border-radius: 0.6rem;
+}
+
+.ctbox {
+  display: flex;
+}
+
+.ls {
+  width: 20%;
+  transition: width 0.3s ease;
+}
+
+.rs {
+  width: 100%;
+  transition: width 0.3s ease;
+  // background-color: rgb(43, 39, 39);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+}
